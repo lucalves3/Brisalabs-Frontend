@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import loginImage from '../../images/login.svg'
 
 const LoginSTL = styled.section`
 
@@ -7,6 +6,7 @@ const LoginSTL = styled.section`
     display: flex;
     flex-direction: column;
     width: 350px;
+    align-items: center;
   }
 
   input {
@@ -22,6 +22,11 @@ const LoginSTL = styled.section`
     border-radius: 8px;
     background-color: #FFCB05;
     color: black;
+    margin-top: 33px;
+  }
+
+  .fisrtSection {
+    margin-left: 5%;
   }
 
   .imageLogo {
@@ -32,11 +37,11 @@ const LoginSTL = styled.section`
   }
 
   .img-login {
-  position: fixed;
-  z-index: -9999;
-  width: 75%;
-  margin-top: -30%;
-  margin-left: 30%;
+    position: fixed;
+    z-index: -9999;
+    width: 75%;
+    margin-top: -34%;
+    margin-left: 30%;
   }
 `;
 

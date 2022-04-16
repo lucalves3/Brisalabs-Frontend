@@ -4,7 +4,7 @@ import LoginRegistration from "./LoginRegistration";
 const LoginPage = () => {
   return (
     <section>
-    <LoginRegistration />
+      <LoginRegistration />
     </section>
   )
 };

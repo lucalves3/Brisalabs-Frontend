@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import { Provider } from './context/context';
+import Login from './pages/login';
+import Home from './pages/home';
+import AllPokes from './pages/allPokes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <Provider>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<Login />} />
+        <Route exact path='/home' element={<Home />} />
+        <Route exact path='/see-all' element={<AllPokes />} />
+      </Routes>
+    </BrowserRouter>
+  </Provider>
   </React.StrictMode>
 );
 

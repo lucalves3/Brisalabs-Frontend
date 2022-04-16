@@ -1,13 +1,13 @@
-import './App.css';
-import { Provider } from './context/context';
-import Routes from './routes';
+// import './App.css';
+// import { Provider } from './context/context';
+// import PagesRoutes    from './routes';
 
-function App() {
-  return (
-    <Provider>
-      <Routes />
-    </Provider>
-  );
-}
+// function App() {
+//   return (
+//     <Provider>
+//       <PagesRoutes />
+//     </Provider>
+//   );
+// }
 
-export default App;
+// export default App;

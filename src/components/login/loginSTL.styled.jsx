@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import loginImage from '../../images/login.svg'
 
 const LoginSTL = styled.section`
 
@@ -28,6 +29,14 @@ const LoginSTL = styled.section`
     margin-top: 20px;
     width: 200px;
     height: 76px;
+  }
+
+  .img-login {
+  position: fixed;
+  z-index: -9999;
+  width: 75%;
+  margin-top: -30%;
+  margin-left: 30%;
   }
 `;
 

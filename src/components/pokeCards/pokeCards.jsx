@@ -1,5 +1,6 @@
 import React from "react";
 import PokeCardsSTL from "./pokeCardsSTL";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const PokeCards = ({ image, name, type, id}) => {
   console.log(type.map((hab) => (
@@ -8,7 +9,7 @@ const PokeCards = ({ image, name, type, id}) => {
   return (
     <PokeCardsSTL>
       <div>
-        heart
+        <FavoriteBorderIcon />
       </div>
       <img src={image} alt={name} />
       <div>

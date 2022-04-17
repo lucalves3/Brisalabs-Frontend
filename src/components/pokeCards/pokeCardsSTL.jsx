@@ -21,6 +21,11 @@ const PokeCardsSTL = styled.section.attrs((props) => ({
     height: 100px;
   }
 
+  h1 {
+    margin-bottom: -20px;
+    margin-top: -5px;
+  }
+
   .idPoke {
     color: gray;
     width: 160px;

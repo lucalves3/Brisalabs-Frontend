@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import LoginSTL from "./loginSTL.styled";
 import logoPokemon from '../../images/pokemon-logo-white.svg'
 import loginImage from '../../images/login.svg'
+import { Context } from "../../context/context";
 
 const LoginRegistration = () => {
+  const {typeButton} = useContext(Context);
+
   return (
-    <LoginSTL>
+    <LoginSTL darkMode={typeButton}>
       <section className="fisrtSection">
         <img className="imageLogo" src={logoPokemon} alt="Imagen da logo do pokemon" />
         <h1>Comece a coletar pokémons!</h1>

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const LoginSTL = styled.section`
+const LoginSTL = styled.section.attrs((props) => ({
+  darkMode: props.darkMode,
+}))`
+background-color: ${(props) => props.darkMode ? 'black' : 'white' };
+z-index: -111;
 
   div {
     display: flex;

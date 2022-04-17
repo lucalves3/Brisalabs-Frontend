@@ -18,13 +18,13 @@ const Header = () => {
     <HeaderSTL darkMode={typeButton}>
       <img src={pokemonLogo} alt="pokemon logo" />
       <div>
-        <button>
+        <button className="navigations-links">
           Favoritos
         </button>
-        <button>
+        <button className="navigations-links">
           Procurar
         </button>
-        <button>
+        <button className="navigations-links">
           Ver Todos
         </button>
       </div>

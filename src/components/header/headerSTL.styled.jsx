@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import loginImage from '../../images/login.svg';
 
 const HeaderSTL = styled.header.attrs((props) => ({
   darkMode: props.darkMode,
@@ -15,12 +14,29 @@ height: 50px;
 .LeaveButton {
   border-radius: 15px;
   border: 1px solid ${(props) => props.darkMode ? 'white' : 'black' };
+  color: ${(props) => props.darkMode ? 'white' : 'black'};
   background-color: inherit;
   width: 70px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
+}
+
+.navigations-links {
+  border: none;
+  background-color: inherit;
+  /* margin: 0px 10px 0px 10px; */
+  padding: 16px;
+  font-weight: 300;
+  color: ${(props) => props.darkMode ? 'white' : 'black'};
+  cursor: pointer;
+}
+
+.navigations-links:focus {
+  border-bottom: 3px solid ${(props) => props.darkMode ? '#FFCB05' : 'black'};
+  color: ${(props) => props.darkMode ? '#FFCB05' : 'black'};
+  font-weight: 800 bold;
 }
 `;
 

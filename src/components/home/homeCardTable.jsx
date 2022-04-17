@@ -69,7 +69,7 @@ const HomeCardTable = () => {
         <button className="typePoke" onClick={() => filterPokemon('fire')}>
           Fire
         </button>
-        <button className="typePoke" onClick={() => filterPokemon('eletric')}>
+        <button className="typePoke" onClick={() => filterPokemon('electric')}>
           Eletric
         </button>
         <button className="typePoke" onClick={() => filterPokemon('water')}>

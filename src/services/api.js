@@ -1,5 +1,5 @@
 export async function getAllPokemons() {
-  const apiPoke = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
+  const apiPoke = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
   const returnApiPoke = await apiPoke.json();
   return returnApiPoke;
 }

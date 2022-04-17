@@ -9,7 +9,6 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-around;
-/* height: 100vh; */
 align-items: center;
 
 `;

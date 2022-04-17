@@ -4,7 +4,7 @@ import darkModeLight from "../../images/moon-dark-mode.svg"
 import ButtonDarkModeSTL from "../../utils/ButtonDarkModeSTL.styled";
 import darkModeDark from "../../images/sun-dark-mode.svg"
 import HomeCardTableSTL from "./homeCardTableSTL.styled";
-import { getAllPokemons } from "../../services/api";
+import { getAllPokemons, getApiPokemon } from "../../services/api";
 import PokeCards from "../pokeCards/pokeCards";
 import HomeSectionSTL from "./homeSectionSTL.styled";
 
@@ -12,6 +12,7 @@ const HomeCardTable = () => {
   const {typeButton, setTypeButton, setTextButton, textButton} = useContext(Context);
   const [imageDM, setImageDM] = useState(darkModeLight);
   const [pokeDatas, setPokeDatas] = useState([]);
+  const [pokeInfos, setPokeInfos] = useState([]);
 
   useEffect(() => {
     async function getAllPoke() {
@@ -21,7 +22,22 @@ const HomeCardTable = () => {
     getAllPoke()
   }, []);
 
-  console.log(pokeDatas);
+  useEffect(() => {
+    async function getPokeByName() {
+      let arrayPokes = [];
+      pokeDatas.map(async (poke) => {
+        const result = await getApiPokemon(poke.name);
+        arrayPokes.push(result);
+        if (arrayPokes.length === 20) {
+          setPokeInfos(arrayPokes);
+        }
+      });
+    };
+    getPokeByName();
+  }, [setPokeInfos, pokeDatas]);
+
+  console.log(pokeInfos);
+  
 
   const darkMode = () => {
     if (typeButton === false) {
@@ -56,9 +72,12 @@ const HomeCardTable = () => {
       </ButtonDarkModeSTL>
       </div>
     <HomeCardTableSTL darkMode={typeButton}>
-      { pokeDatas && pokeDatas.map((poke) => (
+      { pokeInfos && pokeInfos.map((poke) => (
         <PokeCards 
         name={poke?.name}
+        image={poke?.sprites?.front_default}
+        id={poke?.id}
+        type={poke?.types}
         />
       )) }
     </HomeCardTableSTL>

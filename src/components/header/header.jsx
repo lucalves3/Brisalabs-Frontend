@@ -3,6 +3,7 @@ import { Context } from "../../context/context";
 import HeaderSTL from "./headerSTL.styled";
 import pokemonLogo from "../../images/header-logo.svg";
 import leaveVector from "../../images/leave-vector.svg";
+import leaveVectorWhite from "../../images/leave-vector-white.svg";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -30,7 +31,7 @@ const Header = () => {
       </div>
       <button className="LeaveButton" onClick={() => handleLeave()}>
         Sair
-        <img src={leaveVector} alt="Sair" />
+        <img src={ typeButton === true ? leaveVectorWhite : leaveVector} alt="Sair" />
       </button>
     </HeaderSTL>
   )

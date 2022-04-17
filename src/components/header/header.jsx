@@ -4,12 +4,13 @@ import HeaderSTL from "./headerSTL.styled";
 import pokemonLogo from "../../images/header-logo.svg";
 import leaveVector from "../../images/leave-vector.svg";
 import leaveVectorWhite from "../../images/leave-vector-white.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 const Header = () => {
   const {typeButton} = useContext(Context);
   let navigate = useNavigate();
-
+  const location = useLocation();
+  console.log(location?.pathname)
   const handleLeave = () => {
     localStorage.clear();
     navigate('/');
@@ -19,15 +20,21 @@ const Header = () => {
     <HeaderSTL darkMode={typeButton}>
       <img src={pokemonLogo} alt="pokemon logo" />
       <div>
-        <button className="navigations-links">
-          Favoritos
-        </button>
-        <button className="navigations-links">
-          Procurar
-        </button>
-        <button className="navigations-links">
-          Ver Todos
-        </button>
+        <Link to="/favorites">
+          <button className={location?.pathname === '/favorites' ? 'navigations-linkstrue' : 'navigations-linksfalse'}>
+              Favoritos
+          </button>
+        </Link>
+        <Link to="/search">
+          <button className={location?.pathname === '/search' ? 'navigations-linkstrue' : 'navigations-linksfalse'}>
+            Procurar
+          </button>
+        </Link>
+        <Link to="/home">
+          <button className={location?.pathname === '/home' ? 'navigations-linkstrue' : 'navigations-linksfalse'}>
+            Ver Todos
+          </button>
+        </Link>
       </div>
       <button className="LeaveButton" onClick={() => handleLeave()}>
         Sair

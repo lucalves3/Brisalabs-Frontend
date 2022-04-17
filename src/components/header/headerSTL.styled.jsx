@@ -23,13 +23,25 @@ height: 50px;
   cursor: pointer;
 }
 
-.navigations-links {
+.navigations-linksfalse {
   border: none;
   background-color: inherit;
   /* margin: 0px 10px 0px 10px; */
   padding: 16px;
   font-weight: 300;
   color: ${(props) => props.darkMode ? 'white' : 'black'};
+  cursor: pointer;
+}
+
+.navigations-linkstrue {
+  border: none;
+  background-color: inherit;
+  /* margin: 0px 10px 0px 10px; */
+  padding: 16px;
+  font-weight: 300;
+  border-bottom: 3px solid ${(props) => props.darkMode ? '#FFCB05' : 'black'};
+  color: ${(props) => props.darkMode ? '#FFCB05' : 'black'};
+  font-weight: 800 bold;
   cursor: pointer;
 }
 

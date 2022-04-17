@@ -43,7 +43,7 @@ const HomeCardTable = () => {
       setFilterPokes(type);
       setIsFilter(true);
     };
-    if (type === 'no') {
+    if (type === '') {
       setIsFilter(false);
     }
   }
@@ -63,16 +63,16 @@ const HomeCardTable = () => {
   return (
     <HomeSectionSTL darkMode={typeButton}>
       <div style={{marginTop: '20px'}}>
-        <button className="typePoke" onClick={() => filterPokemon('no')}>
+        <button className={filterPokes === '' ? 'typePoketrue' : 'typePokefalse'} onClick={() => filterPokemon('')}>
           Todos
         </button>
-        <button className="typePoke" onClick={() => filterPokemon('fire')}>
+        <button className={filterPokes === 'fire' ? 'typePoketrue' : 'typePokefalse'} onClick={() => filterPokemon('fire')}>
           Fire
         </button>
-        <button className="typePoke" onClick={() => filterPokemon('electric')}>
+        <button className={filterPokes === 'electric' ? 'typePoketrue' : 'typePokefalse'} onClick={() => filterPokemon('electric')}>
           Eletric
         </button>
-        <button className="typePoke" onClick={() => filterPokemon('water')}>
+        <button className={filterPokes === 'water' ? 'typePoketrue' : 'typePokefalse'} onClick={() => filterPokemon('water')}>
           Water
         </button>
       <ButtonDarkModeSTL onClick={darkMode} change={typeButton}>

@@ -10,7 +10,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from './context/context';
 import Login from './pages/login';
 import Home from './pages/home';
-import AllPokes from './pages/allPokes';
+import Favorites from './pages/favorites';
+import Search from './pages/search';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +21,8 @@ root.render(
       <Routes>
         <Route exact path='/' element={<Login />} />
         <Route exact path='/home' element={<Home />} />
-        <Route exact path='/see-all' element={<AllPokes />} />
+        <Route exact path='/favorites' element={<Favorites />} />
+        <Route exact path='/search' element={<Search />} />
       </Routes>
     </BrowserRouter>
   </Provider>

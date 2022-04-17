@@ -1,10 +1,10 @@
 import React from "react";
 
-const AllPokes = () => {
+const Search = () => {
   return (
     <>
     </>
   );
 }
 
-export default AllPokes;
+export default Search;

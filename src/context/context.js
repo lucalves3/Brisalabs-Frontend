@@ -8,7 +8,6 @@ export const Provider = ({ value, children }) => {
   const [textButton, setTextButton] = useState('Tema escuro');
   const [favPokes, setFavPokes] = useState([]);
 
-
   const values = {
     favPokes,
     setFavPokes,

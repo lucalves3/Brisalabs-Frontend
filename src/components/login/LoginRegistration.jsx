@@ -53,7 +53,6 @@ const LoginRegistration = () => {
 
   useEffect(() => {
     function checkStorage () {
-      console.log(token)
       if (token !== null) {
         navigate('/home')
       }

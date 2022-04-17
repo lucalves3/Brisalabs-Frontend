@@ -23,7 +23,9 @@ background-size: cover;
   }
 
   h1 {
-    color: ${(props) => props.darkMode ? '#E5E5E5' : 'black'}
+    color: ${(props) => props.darkMode ? '#E5E5E5' : 'black'};
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
   }
 
   input {
@@ -31,6 +33,13 @@ background-size: cover;
     height: 34px;
     border-radius: 8px;
     margin-top: 15px;
+    border: 0px solid;
+  }
+
+  input:focus {
+    outline: none !important;
+    border: 0px solid blue;
+    box-shadow: 0 0 10px #719ECE;
   }
 
   .buttonLoginWhite {
@@ -40,26 +49,17 @@ background-size: cover;
     background-color: #FFCB05;
     color: black;
     margin-top: 33px;
-    /* margin-bottom: 10px; */
   }
 
   .fisrtSection {
     margin-left: 5%;
+    width: 20%;
   }
 
   .imageLogo {
-    margin-left: 50px;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 200px;
     height: 76px;
-  }
-
-  .img-login {
-    position: fixed;
-    width: 100vmax;
-    /* margin-top: -35%;
-    margin-left: 30%;
-    margin-bottom: -15%; */
   }
 `;
 

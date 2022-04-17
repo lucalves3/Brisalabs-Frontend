@@ -10,7 +10,7 @@ const ButtonDarkModeSTL = styled.button.attrs((props) => ({
   background-color: inherit;
   border: 1px, solid;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 40px;
 
   img {
     width: 10px;

@@ -13,6 +13,8 @@ const HomeCardTable = () => {
   const [imageDM, setImageDM] = useState(darkModeLight);
   const [pokeDatas, setPokeDatas] = useState([]);
   const [pokeInfos, setPokeInfos] = useState([]);
+  const [filterPokes, setFilterPokes] = useState('');
+  const [isFilter, setIsFilter] = useState(false);
 
   useEffect(() => {
     async function getAllPoke() {
@@ -36,8 +38,15 @@ const HomeCardTable = () => {
     getPokeByName();
   }, [setPokeInfos, pokeDatas]);
 
-  console.log(pokeInfos);
-  
+  const filterPokemon = (type) => {
+    if (type !== 'no') {
+      setFilterPokes(type);
+      setIsFilter(true);
+    };
+    if (type === 'no') {
+      setIsFilter(false);
+    }
+  }
 
   const darkMode = () => {
     if (typeButton === false) {
@@ -54,16 +63,16 @@ const HomeCardTable = () => {
   return (
     <HomeSectionSTL darkMode={typeButton}>
       <div style={{marginTop: '20px'}}>
-        <button className="typePoke">
+        <button className="typePoke" onClick={() => filterPokemon('no')}>
           Todos
         </button>
-        <button className="typePoke">
+        <button className="typePoke" onClick={() => filterPokemon('fire')}>
           Fire
         </button>
-        <button className="typePoke">
+        <button className="typePoke" onClick={() => filterPokemon('eletric')}>
           Eletric
         </button>
-        <button className="typePoke">
+        <button className="typePoke" onClick={() => filterPokemon('water')}>
           Water
         </button>
       <ButtonDarkModeSTL onClick={darkMode} change={typeButton}>
@@ -71,16 +80,30 @@ const HomeCardTable = () => {
         {textButton}
       </ButtonDarkModeSTL>
       </div>
-    <HomeCardTableSTL darkMode={typeButton}>
-      { pokeInfos && pokeInfos.map((poke) => (
-        <PokeCards 
-        name={poke?.name}
-        image={poke?.sprites?.front_default}
-        id={poke?.id}
-        type={poke?.types}
-        />
-      )) }
-    </HomeCardTableSTL>
+      {
+        isFilter === true ?
+        <HomeCardTableSTL darkMode={typeButton}>
+          { pokeInfos && pokeInfos.filter((e) => e.types[0].type.name === filterPokes).map((poke) => (
+            <PokeCards 
+            name={poke?.name}
+            image={poke?.sprites?.front_default}
+            id={poke?.id}
+            type={poke?.types}
+            />
+          )) }
+        </HomeCardTableSTL>
+        :
+        <HomeCardTableSTL darkMode={typeButton}>
+          { pokeInfos && pokeInfos.map((poke) => (
+            <PokeCards 
+            name={poke?.name}
+            image={poke?.sprites?.front_default}
+            id={poke?.id}
+            type={poke?.types}
+            />
+          )) }
+        </HomeCardTableSTL>
+      }
     </HomeSectionSTL>
   );
 };

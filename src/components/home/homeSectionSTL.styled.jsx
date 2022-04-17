@@ -9,6 +9,7 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: space-evenly;
+height: 100vh;
 
 .typePokefalse {
   border: 1px solid;

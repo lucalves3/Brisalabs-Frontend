@@ -8,7 +8,8 @@ const ButtonDarkModeSTL = styled.button.attrs((props) => ({
   border-radius: 15px;
   color: ${ (props) => props.change ? 'white' : 'black' };
   background-color: inherit;
-  border: 1px, solid;
+  /* border: 1px, solid; */
+  border: 1px solid ${ (props) => props.change ? 'white' : 'black' };
   cursor: pointer;
   margin-left: 40px;
 

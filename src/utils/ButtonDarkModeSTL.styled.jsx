@@ -6,14 +6,11 @@ const ButtonDarkModeSTL = styled.button.attrs((props) => ({
 }))`
   width: 120px;
   border-radius: 15px;
-  position: fixed;
-  top: 87%;
-  left: 40px;
-  z-index: -1;
   color: ${ (props) => props.change ? 'white' : 'black' };
   background-color: inherit;
   border: 1px, solid;
   cursor: pointer;
+  margin-left: 10px;
 
   img {
     width: 10px;

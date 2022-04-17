@@ -71,6 +71,105 @@ const PokeCardsSTL = styled.section.attrs((props) => ({
     justify-content: center;
   }
 
+  .hability-electric {
+    background-color: #FFCB05;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-steel {
+    background-color: gray;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-rock {
+    background-color: whitesmoke;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-ice {
+    background-color: cyan;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-ghost {
+    background-color: whitesmoke;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-ground {
+    background-color: #392620;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-fairy {
+    background-color: pink;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-psychic {
+    background-color: blueviolet;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hability-fighting {
+    background-color: violet;
+    width: 70px;
+    height: 25px;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .hability-normal {
     background-color: white;
     width: 70px;

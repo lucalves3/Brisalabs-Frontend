@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import PokeCardsSTL from "./pokeCardsSTL";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import { Context } from "../../context/context";
 
 const PokeCards = ({ image, name, type, id}) => {
-  console.log(type.map((hab) => (
-    hab?.type?.name
-  )))
+  const { favPokes, setFavPokes } = useContext(Context);
+
+  const favIcons = () => {
+    if (favPokes.includes(id) === false) {
+      setFavPokes([...favPokes, id])
+    }
+    if (favPokes.includes(id) === true) {
+      setFavPokes(favPokes.filter((e) => e !== id));
+    }
+  };
+
   return (
     <PokeCardsSTL>
-      <div>
-        <FavoriteBorderIcon />
+      <div className="heart-div">
+        { favPokes.includes(id) ?
+        <FavoriteRoundedIcon sx={{color: 'red'}} onClick={() => favIcons()} />
+        :
+        <FavoriteBorderIcon onClick={() => favIcons()} />
+         }
       </div>
       <img src={image} alt={name} />
       <div>
@@ -24,7 +38,6 @@ const PokeCards = ({ image, name, type, id}) => {
         {type.map((hab) => (
           <>
           <p className={`hability-${hab?.type?.name}`}>{hab?.type?.name.charAt(0).toUpperCase() + hab?.type?.name.slice(1)}</p>
-          {console.log(`hability-${hab?.type?.name}`)}
           </>
         ))}
       </div>

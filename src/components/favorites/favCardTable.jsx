@@ -46,7 +46,7 @@ const FavCardTable = () => {
     <HomeSectionSTL darkMode={typeButton}>
       <div className="sectionFavorites">
         <ButtonDarkModeSTL onClick={darkMode} change={typeButton}>
-          <img src={imageDM} alt={typeButton === false ? 'imagem de lua' : 'image de sol'} />
+          <img src={imageDM} alt={typeButton === false ? 'imagem de lua' : 'imagem de sol'} />
           {textButton}
         </ButtonDarkModeSTL>
       </div>
